@@ -87,17 +87,15 @@ function collideWithEnemies(prevBottom) {
 
 // ④ 描く：配列の敵を1体ずつ描く
 function drawEnemies() {
-
   for (const enemy of enemies) {
-
     // 気づく敵なら色を変える
     if (enemy.type === "notice") {
       ctx.fillStyle = "#ffd166";
+    } else {
+      ctx.fillStyle = "#ff6b6b"; // 通常の敵の色を指定しておく
     }
-
     ctx.fillRect(enemy.x, enemy.y, enemy.w, enemy.h);
   }
-
   ctx.fillStyle = "#e8eeff";
   ctx.fillText("敵 = " + enemies.length, 10, 40);
 }
